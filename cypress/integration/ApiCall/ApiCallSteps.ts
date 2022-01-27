@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import userNames from '../../fixtures/userData.json'
+
 
 beforeEach(() => {
     cy.getAllUsers().as('allUsers')
@@ -9,7 +11,7 @@ beforeEach(() => {
 
 it('call get-all-users and verify', () => {
 
-    const uNames = ['Ivana', 'Dominik', 'Ivana']
+    const uNames = userNames.names
 
     cy.get('@allUsers').then(response => {
         const resBody = Cypress.env('Users', response.body);
@@ -20,7 +22,9 @@ it('call get-all-users and verify', () => {
         uNames.forEach(name => {
             const names = Cypress._.map(response.body, 'name')
             expect(names[i]).to.eq(name)
+            console.log(i + ' - ' + names[i])
             i++
+
         })
     })
 })
