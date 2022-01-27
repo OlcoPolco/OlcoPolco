@@ -3,8 +3,8 @@ name: Cypress Tests
 on: 
   push:
     branches: [master]
-  schedule:
-  - cron: "5 14 * * *"
+  # schedule:
+  # - cron: "5 14 * * *"
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
