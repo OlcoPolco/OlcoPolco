@@ -1,26 +1,26 @@
 /// <reference types="cypress" />
 
+
 beforeEach(() => {
-
+    cy.getAllUsers().as('allUsers')
 })
 
 
 
-it('call get-all-users', () => {
+it('call get-all-users and verify', () => {
 
-    cy.request({
-        method: 'GET',
-        url: '/get-all-users'
-    }).as('userDetails')
+    const uNames = ['Ivana', 'Dominik', 'Ivana']
+
+    cy.get('@allUsers').then(response => {
+        const resBody = Cypress.env('Users', response.body);
+        expect(resBody.length).to.eq(3)
+
+        const i: Number = 0
+
+        uNames.forEach(name => {
+            const names = Cypress._.map(response.body, 'name')
+            expect(names[i]).to.eq(name)
+            i++
+        })
+    })
 })
-
-
-// cy.get('bodys'[0]).should('have.length', 3)
-
-const uNames = ['Ivana', 'Dominik', 'Ivana']
-
-// cy.wait('@userDetails').then( user => {
-//     const userNames = Cypress._.map(user.response.body.name)
-//     expect(userNames).to.deep.eq(uNames)
-// })
-
