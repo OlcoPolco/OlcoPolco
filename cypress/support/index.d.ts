@@ -3,5 +3,6 @@
 declare namespace Cypress{
     interface Chainable{
         getAllUsers(): Chainable<Object>
+        crtUser(fixtureBody: json): Chainable<Object>
     }
 }

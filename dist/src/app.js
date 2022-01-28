@@ -25,12 +25,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dataController = __importStar(require("./controller/databaseApis"));
 const app = (0, express_1.default)();
+app.use(express_1.default.json());
 // Connection string
 app.set('port', process.env.PORT || 3000);
 // Deffined request type/endpoint/path
 app.get('/get-all-users', dataController.allUsers);
 app.get('/get-user/:id', dataController.getUser);
-app.put('/crt-user', dataController.addUser);
+app.post('/crt-user', dataController.addUser);
 app.delete('/dlt-user/:id', dataController.deleteUser);
-app.post("/chg-user/:id", dataController.updateUser);
+app.put("/chg-user/:id", dataController.updateUser);
 exports.default = app;

@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
 
-const uri: string = 'mongodb://127.0.0.1:27017/local';
-
-// Error handling
-mongoose.connect(uri, (err:any) => {
+// MongoDB connect
+mongoose.connect('mongodb://localhost:27017/local', function(err) {
     if (err) {
-        console.log(err.message);
-    }
-    else {
-        console.log("Successfully Connected to MongoDB");
+        console.log('Not connected to the database: ' + err);
+    } else {
+        console.log('Successfully connected to MongoDB')
     }
 });
 // Data schema
@@ -19,6 +16,6 @@ export const useDataSchema = new mongoose.Schema({
     age: {type: Number, required: true }
 });
 // Data model
-const Data = mongoose.model("datas", useDataSchema);
+const Data = mongoose.model("data", useDataSchema);
 
 export default Data;

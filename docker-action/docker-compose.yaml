@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  private-mongo-db:
+    image: mongo
+    container_name: private-mongo-db
+    ports:
+      - "27017:27017"
+    restart: always
+    

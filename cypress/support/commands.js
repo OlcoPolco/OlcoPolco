@@ -6,3 +6,11 @@ Cypress.Commands.add('getAllUsers', () => {
         url: '/get-all-users'
     })
 })
+
+Cypress.Commands.add('crtUser', (fixtureBody) => {
+    cy.request({
+        method: 'PUT',
+        url: '/crt-user',
+        body: fixtureBody
+    })
+})

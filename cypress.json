@@ -1,5 +1,5 @@
 {
-  "testFiles": "**/*Steps.ts",
+  "testFiles": "**/*.ts",
   "baseUrl": "http://localhost:3000",
   "projectId": "ibr2bo"
 }
