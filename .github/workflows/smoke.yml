@@ -8,10 +8,10 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
-      matrix:
-        containers: [1]
+    # strategy:
+    #   fail-fast: true
+    #   matrix:
+    #     containers: [1]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
