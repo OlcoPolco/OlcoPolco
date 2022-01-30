@@ -2283,7 +2283,7 @@
     "readable-stream" "^2.2.2"
     "typedarray" "^0.0.6"
 
-"concurrently@*":
+"concurrently@*", "concurrently@^7.0.0":
   "integrity" "sha512-WKM7PUsI8wyXpF80H+zjHP32fsgsHNQfPLw/e70Z5dYkV7hF+rf8q3D+ScWJIEr57CpkO3OWBko6hwhQLPR8Pw=="
   "resolved" "https://registry.npmjs.org/concurrently/-/concurrently-7.0.0.tgz"
   "version" "7.0.0"
