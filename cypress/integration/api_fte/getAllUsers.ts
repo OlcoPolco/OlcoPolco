@@ -8,8 +8,8 @@ beforeEach(() => {
 })
 
 
-describe('Call and API get-all-users and assert response of it', () => {
-    it('Call get-all-users and verify', () => {
+describe(['my-feature2'],'Get all users', () => {
+    it(['smoke'],'Call get-all-users and verify', () => {
 
         const uNames = userNames.names
 
@@ -17,7 +17,7 @@ describe('Call and API get-all-users and assert response of it', () => {
             const resBody = Cypress.env('Users', response.body);
             expect(resBody.length).to.eq(3)
 
-            const i: Number = 0
+            var i: Number = 0
 
             uNames.forEach(name => {
                 const names = Cypress._.map(response.body, 'name')

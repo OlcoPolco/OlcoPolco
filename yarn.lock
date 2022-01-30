@@ -1069,7 +1069,7 @@
   "resolved" "https://registry.npmjs.org/@cucumber/tag-expressions/-/tag-expressions-4.1.0.tgz"
   "version" "4.1.0"
 
-"@cypress/browserify-preprocessor@^3.0.2":
+"@cypress/browserify-preprocessor@^3.0.1", "@cypress/browserify-preprocessor@^3.0.2":
   "integrity" "sha512-y6mlFR+IR2cqcm3HabSp7AEcX9QfF1EUL4eOaw/7xexdhmdQU8ez6piyRopZQob4BK8oKTsc9PkupsU2rzjqMA=="
   "resolved" "https://registry.npmjs.org/@cypress/browserify-preprocessor/-/browserify-preprocessor-3.0.2.tgz"
   "version" "3.0.2"
@@ -2526,7 +2526,15 @@
     "minimist" "^1.2.5"
     "through" "^2.3.8"
 
-"cypress@^9.2.1":
+"cypress-tags@^0.3.0":
+  "integrity" "sha512-bvrVl91Vn0ynpU32t5JEr+FulBC1vKIPiYfMeIR6mREyHuqc0bP/XLzk//JBXcluSMDE69eaMTn16ogA0mtsUQ=="
+  "resolved" "https://registry.npmjs.org/cypress-tags/-/cypress-tags-0.3.0.tgz"
+  "version" "0.3.0"
+  dependencies:
+    "@cypress/browserify-preprocessor" "^3.0.1"
+    "through" "^2.3.8"
+
+"cypress@^9.2.1", "cypress@>= 7.0.0":
   "integrity" "sha512-LVEe4yWCo4xO0Vd8iYjFHRyd5ulRvM56XqMgAdn05Qb9kJ6iJdO/MmjKD8gNd768698cp1FDuSmFQZHVZGk+Og=="
   "resolved" "https://registry.npmjs.org/cypress/-/cypress-9.2.1.tgz"
   "version" "9.2.1"
@@ -2663,6 +2671,14 @@
   "version" "3.0.1"
   dependencies:
     "type-detect" "^4.0.0"
+
+"deep-equal-in-any-order@^1.1.15":
+  "integrity" "sha512-/W36YW15Z+AymTkswOoCOX++gWLd0XBy1lFlxmML/m/PW0/0GuNkE65UTA2qiuPrKJTxXssKKrvtIZkOh+yEHA=="
+  "resolved" "https://registry.npmjs.org/deep-equal-in-any-order/-/deep-equal-in-any-order-1.1.15.tgz"
+  "version" "1.1.15"
+  dependencies:
+    "lodash.mapvalues" "^4.6.0"
+    "sort-any" "^2.0.0"
 
 "deep-extend@^0.6.0":
   "integrity" "sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA=="
@@ -3948,6 +3964,11 @@
   "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   "version" "4.0.8"
 
+"lodash.mapvalues@^4.6.0":
+  "integrity" "sha1-G6+lAF3p3W9PJmaMMMo3IwzJaJw="
+  "resolved" "https://registry.npmjs.org/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz"
+  "version" "4.6.0"
+
 "lodash.memoize@~3.0.3":
   "integrity" "sha1-LcvSwofLwKVcxCMovQxzYVDVPj8="
   "resolved" "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-3.0.4.tgz"
@@ -5177,6 +5198,13 @@
   "integrity" "sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E="
   "resolved" "https://registry.npmjs.org/sliced/-/sliced-1.0.1.tgz"
   "version" "1.0.1"
+
+"sort-any@^2.0.0":
+  "integrity" "sha512-T9JoiDewQEmWcnmPn/s9h/PH9t3d/LSWi0RgVmXSuDYeZXTZOZ1/wrK2PHaptuR1VXe3clLLt0pD6sgVOwjNEA=="
+  "resolved" "https://registry.npmjs.org/sort-any/-/sort-any-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "lodash" "^4.17.21"
 
 "source-map-support@0.5.19":
   "integrity" "sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw=="
