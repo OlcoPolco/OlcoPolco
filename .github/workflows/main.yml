@@ -18,11 +18,11 @@ jobs:
       - name: Cypress install
         uses: cypress-io/github-action@v2
         with:
-          start: yarn run watch
+          start: npm start
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
           browser: chrome
           record: true
           parallel: true
         env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
