@@ -5,13 +5,22 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    # strategy:
+    #   fail-fast: true
+    #   matrix:
+    #     containers: [1, 2, 3, 4, 5]
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
+      - name: Cypress install
         uses: cypress-io/github-action@v2
+        with:
+          start: npm run
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
+          browser: chrome
+          record: true
+          parallel: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
