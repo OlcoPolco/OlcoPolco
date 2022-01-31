@@ -27,7 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Cypress install
-          # start: npm run watch
+        start: npm run watch
         uses: cypress-io/github-action@v2
         with:
           wait-on: 'http://localhost:3000'
