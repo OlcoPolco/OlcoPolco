@@ -1,14 +1,22 @@
-name: Cypress Tests using Cypress Docker Image
+name: Smoke Tests
 
 on: [push]
 
 jobs:
+  # install:
+  # ....
   cypress-run:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Download the build folders
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
@@ -17,7 +25,8 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           browser: chrome
+          build: yarn build
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CYPRESS_INCLUDE_TAGS: 'my-feature1,my-feature2'
+          CYPRESS_INCLUDE_TAGS: 'smoke'
