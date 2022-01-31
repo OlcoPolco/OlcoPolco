@@ -16,14 +16,14 @@ module.exports = (on, config) => {
   on("file:preprocessor", cucumber(options));
 
   on('file:preprocessor', tagify(config));
-  config.env.CYPRESS_INCLUDE_TAGS = 'smoke';
+  //config.env.CYPRESS_INCLUDE_TAGS = 'smoke';
 
   // on('before:browser:launch', (browser = {}, launchOptions) => {
   //   if (browser.name === 'chrome') {
   //       launchOptions.args.push('--auto-open-devtools-for-tabs','--window-size=800,800')
   //       return launchOptions
   //   }
-// });
+  // });
 
-// return config.env.configFile = dev;
+  // return config.env.configFile = dev;
 };
