@@ -30,7 +30,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install: false
-          start: npm run watch
+          start: npm run
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 30
           browser: chrome
