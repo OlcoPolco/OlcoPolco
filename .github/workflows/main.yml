@@ -37,3 +37,5 @@ jobs:
           parallel: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_INCLUDE_TAGS: 'my-feature1,my-feature2'
