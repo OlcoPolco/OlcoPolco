@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 // MongoDB connect
-mongoose.connect('mongodb://localhost:27017/local', function(err) {
-    if (err) {
-        console.log('Not connected to the database: ' + err);
-    } else {
-        console.log('Successfully connected to MongoDB')
-    }
-});
+// mongoose.connect('mongodb://localhost:27017/local', function(err) {
+//     if (err) {
+//         console.log('Not connected to the database: ' + err);
+//     } else {
+//         console.log('Successfully connected to MongoDB')
+//     }
+// });
 // Data schema
 export const useDataSchema = new mongoose.Schema({
     name: {type:String, required: true },
