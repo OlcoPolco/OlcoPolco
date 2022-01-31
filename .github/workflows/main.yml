@@ -1,4 +1,4 @@
-name: Cypress Tests with Install Job and UI Chrome Job x 5
+name: Main
 
 on: [push]
 
