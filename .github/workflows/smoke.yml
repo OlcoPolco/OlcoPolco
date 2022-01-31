@@ -1,29 +1,23 @@
-name: Cypress smoke tests
+name: Cypress Tests using Cypress Docker Image
 
-on: 
-  push:
-    branches: [master]
-  # schedule:
-  # - cron: "5 14 * * *"
+on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    # strategy:
-    #   fail-fast: true
-    #   matrix:
-    #     containers: [1]
+    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Cypress install
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: yarn run watch
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
+          # Specify Browser since container image is compile with Firefox
           browser: chrome
-          record: true
-          parallel: true
         env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          CYPRESS_INCLUDE_TAGS: smoke,regression npx cypress run
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_INCLUDE_TAGS: 'my-feature1,my-feature2'
