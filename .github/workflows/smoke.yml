@@ -16,7 +16,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: yarn run watch
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://192:168:0:22:3000'
           wait-on-timeout: 120
           browser: chrome
           record: true
