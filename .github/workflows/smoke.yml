@@ -24,4 +24,4 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CYPRESS_INCLUDE_TAGS: 'smoke'
+          CYPRESS_INCLUDE_TAGS: 'E2E'
