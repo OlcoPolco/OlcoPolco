@@ -26,9 +26,10 @@ jobs:
       #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mongo:latest
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Cypress install
+      - name: 'Cypress install'
         uses: cypress-io/github-action@v2
         with:
+          install: false
           start: npm run watch
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 30
