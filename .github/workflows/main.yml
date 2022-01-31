@@ -31,7 +31,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120 
+          wait-on-timeout: 30
           browser: chrome
           record: true
           parallel: true
