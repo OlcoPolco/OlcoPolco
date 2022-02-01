@@ -11,15 +11,14 @@ beforeEach(() => {
 describe(['my-feature2'],'Get all users', () => {
     it(['smoke'],'Call get-all-users and verify', () => {
 
-        const uNames = userNames.names
+        const uNames:any = userNames.names
 
-        cy.get('@allUsers').then(response => {
-            const resBody = Cypress.env('Users', response.body);
-            expect(resBody.length).to.eq(3)
+        cy.get('@allUsers').then((response:any) => {
+            expect(response.body.length).to.eq(3)
 
-            var i: Number = 0
+            var i:any = 0
 
-            uNames.forEach(name => {
+            uNames.forEach((name:any) => {
                 const names = Cypress._.map(response.body, 'name')
                 expect(names[i]).to.eq(name)
                 console.log(i + ' - ' + names[i])

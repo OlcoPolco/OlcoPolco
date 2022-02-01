@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
 
-import { use } from "chai"
-import userData from "../../fixtures/userOliver.json"
+import * as userData from "../../fixtures/userOliver.json";
 
-const uId = Cypress._.map(userData)
+const uId: any = Cypress._.map(userData)
 
 describe(['my-feature3'],'Get user by uId', () => {
     it(['smoke'],'Call api get-User and verify', () => {
@@ -12,7 +11,7 @@ describe(['my-feature3'],'Get user by uId', () => {
 
         console.log()
 
-        cy.getUser(uId[0]).then(response => {
+        cy.getUser(uId[0]).then((response:any)=> {
 
             const rBody = Cypress._.map(response.body)
             const fBody = Cypress._.map(userData)

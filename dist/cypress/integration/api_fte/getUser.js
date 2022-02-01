@@ -1,18 +1,34 @@
 "use strict";
 /// <reference types="cypress" />
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const userOliver_json_1 = __importDefault(require("../../fixtures/userOliver.json"));
-const uId = Cypress._.map(userOliver_json_1.default);
+const userData = __importStar(require("../../fixtures/userOliver.json"));
+const uId = Cypress._.map(userData);
 describe(['my-feature3'], 'Get user by uId', () => {
     it(['smoke'], 'Call api get-User and verify', () => {
         var i = 0;
         console.log();
-        cy.getUser(uId[0]).then(response => {
+        cy.getUser(uId[0]).then((response) => {
             const rBody = Cypress._.map(response.body);
-            const fBody = Cypress._.map(userOliver_json_1.default);
+            const fBody = Cypress._.map(userData);
             rBody.forEach(attribute => {
                 // expect(attribute).to.eq.(Cypress._.map(userData)[i])
                 expect(attribute).to.eq(fBody[i]);

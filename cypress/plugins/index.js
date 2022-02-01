@@ -16,7 +16,7 @@ module.exports = (on, config) => {
   on("file:preprocessor", cucumber(options));
 
   on('file:preprocessor', tagify(config));
-  //config.env.CYPRESS_INCLUDE_TAGS = 'smoke';
+  //config.env.CYPRESS_INCLUDE_TAGS = 'E2E';
 
   // on('before:browser:launch', (browser = {}, launchOptions) => {
   //   if (browser.name === 'chrome') {
