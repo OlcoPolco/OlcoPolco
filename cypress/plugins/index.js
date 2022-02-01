@@ -16,6 +16,7 @@ module.exports = (on, config) => {
   on("file:preprocessor", cucumber(options));
 
   on('file:preprocessor', tagify(config));
+  config.env.NO_COLOR=1
   //config.env.CYPRESS_INCLUDE_TAGS = 'E2E';
 
   // on('before:browser:launch', (browser = {}, launchOptions) => {
